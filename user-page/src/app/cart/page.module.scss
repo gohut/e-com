@@ -1,0 +1,528 @@
+.cartShell {
+  min-height: 100vh;
+  background: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.cartContent {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  padding: 76px 56px 70px;
+}
+
+.cartGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 355px;
+  gap: 18px;
+  align-items: start;
+}
+
+.cartList {
+  h1 {
+    margin: 0 0 30px;
+    color: #242428;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+}
+
+.cartItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 146px minmax(0, 1fr) 28px;
+  min-height: 162px;
+  margin-bottom: 30px;
+  background: #ffffff;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.22);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.removing {
+  opacity: 0;
+  transform: translateX(-18px);
+}
+
+.itemImage {
+  position: relative;
+  min-height: 162px;
+  overflow: hidden;
+  background: #f2f2f2;
+
+  img {
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+.itemInfo {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 19px 18px 13px 12px;
+
+  h2 {
+    margin: 0 0 6px;
+    color: #18181b;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 7px 0 0;
+    color: #cfcfcf;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.qtyLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #151515;
+  font-size: 15px;
+  line-height: 1;
+
+  select {
+    border: 0;
+    background: transparent;
+    color: #151515;
+    font: inherit;
+    outline: 0;
+  }
+}
+
+.itemBottom {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+
+  button {
+    border: 0;
+    background: transparent;
+    color: #121212;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  del,
+  strong {
+    color: #111111;
+    font-size: 15px;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.minusButton {
+  align-self: start;
+  justify-self: center;
+  width: 23px;
+  height: 23px;
+  margin-top: 16px;
+  border: 0;
+  background: transparent;
+  color: #202024;
+
+  svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+}
+
+.selectItem {
+  position: absolute;
+  right: 12px;
+  bottom: 14px;
+  width: 19px;
+  height: 19px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  span {
+    display: block;
+    width: 19px;
+    height: 19px;
+    border: 2px solid #ff5a78;
+    border-radius: 3px;
+    background: #ffe5eb;
+  }
+
+  span::after {
+    display: block;
+    color: #ff5a78;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 15px;
+    text-align: center;
+    content: "✓";
+  }
+}
+
+.summaryColumn {
+  position: sticky;
+  top: 18px;
+  display: grid;
+  gap: 28px;
+  padding-top: 58px;
+}
+
+.couponCard,
+.priceCard {
+  background: #ffffff;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+}
+
+.couponCard {
+  display: flex;
+  min-height: 126px;
+  align-items: center;
+  gap: 15px;
+  padding: 26px 32px;
+
+  svg {
+    width: 43px;
+    height: 43px;
+    fill: none;
+    stroke: #111111;
+    stroke-width: 1.8;
+  }
+
+  p {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 9px;
+    color: #050505;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  p button {
+    border: 0;
+    background: transparent;
+    color: #050505;
+    font-size: 18px;
+    font-weight: 800;
+  }
+}
+
+.viewCoupons {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  background: transparent;
+  color: #ff4b00;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.priceCard {
+  padding: 42px 18px 0;
+
+  h2 {
+    margin: 0 0 48px;
+    color: #000000;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+  }
+
+  dl {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 24px;
+  }
+
+  dl div,
+  .grandTotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #050505;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  dt,
+  dd {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  button {
+    width: calc(100% + 36px);
+    height: 47px;
+    margin: 24px -18px 0;
+    border: 0;
+    background: #000000;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+}
+
+.grandTotal {
+  padding: 21px 0 0;
+  border-top: 1px solid #c9c9c9;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.emptyCart {
+  padding: 38px;
+  background: #ffffff;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.18);
+  color: #252525;
+  font-weight: 600;
+}
+
+.worthAdding {
+  position: relative;
+  margin-top: 36px;
+}
+
+.dealTitle {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 28px auto;
+
+  strong {
+    display: grid;
+    width: 42px;
+    height: 25px;
+    place-items: center;
+    transform: rotate(-35deg);
+    background: #ff5a78;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+  }
+
+  h2 {
+    margin: 0;
+    color: #ff4b00;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 3px 0 0;
+    color: #222222;
+    font-size: 15px;
+  }
+}
+
+.stealDeals {
+  margin-bottom: 23px;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.recommendGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.recommendCard {
+  overflow: hidden;
+  border: 1px solid #d7d7d7;
+  background: #ffffff;
+  transition: box-shadow 170ms ease, transform 170ms ease;
+
+  &:hover {
+    box-shadow: 0 9px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+  }
+
+  h3 {
+    min-height: 33px;
+    margin: 8px 8px 2px;
+    color: #111111;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  p {
+    display: flex;
+    gap: 7px;
+    margin: 0 8px 10px;
+    color: #111111;
+    font-size: 10px;
+  }
+
+  button {
+    width: 100%;
+    height: 33px;
+    border: 0;
+    border-top: 1px solid #d7d7d7;
+    background: #ffffff;
+    color: #ff3158;
+    font-size: 10px;
+    font-weight: 800;
+    transition: background 160ms ease, color 160ms ease;
+  }
+
+  button:hover {
+    background: #ff3158;
+    color: #ffffff;
+  }
+}
+
+.recommendImage {
+  position: relative;
+  aspect-ratio: 1 / 1.28;
+  background: #f4f4f4;
+
+  img {
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+.recommendPager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 27px;
+
+  button {
+    min-width: 36px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #cfcfcf;
+    background: #ffffff;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+  }
+
+  button:hover:not(:disabled),
+  .activePage {
+    border-color: var(--accent-red);
+    background: var(--accent-red);
+    color: #ffffff;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 1040px) {
+  .cartContent {
+    padding: 64px 28px 56px;
+  }
+
+  .cartGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryColumn {
+    position: static;
+    grid-row: 2;
+    padding-top: 0;
+  }
+
+  .recommendGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .cartContent {
+    padding: 36px 18px 44px;
+  }
+
+  .cartList h1 {
+    font-size: 22px;
+  }
+
+  .cartItem {
+    grid-template-columns: 110px minmax(0, 1fr) 24px;
+    min-height: 140px;
+    margin-bottom: 22px;
+  }
+
+  .itemImage {
+    min-height: 140px;
+  }
+
+  .itemInfo {
+    padding: 14px 10px 12px;
+
+    h2,
+    p,
+    .qtyLabel {
+      font-size: 12px;
+    }
+  }
+
+  .itemBottom {
+    flex-wrap: wrap;
+    gap: 8px 18px;
+
+    button,
+    del,
+    strong {
+      font-size: 12px;
+    }
+  }
+
+  .couponCard {
+    padding: 22px 18px;
+
+    p,
+    p button,
+    .viewCoupons {
+      font-size: 14px;
+    }
+  }
+
+  .priceCard {
+    padding-top: 30px;
+
+    h2 {
+      margin-bottom: 30px;
+    }
+
+    dl div,
+    .grandTotal {
+      font-size: 15px;
+    }
+  }
+
+  .dealTitle {
+    margin-left: 0;
+  }
+
+  .recommendGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
