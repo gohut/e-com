@@ -1,0 +1,144 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  @include card-base;
+  overflow: hidden; // To keep rounded corners for the gray footer
+  padding: 0; // We will pad the sections instead
+  border-radius: $radius-md;
+  margin-bottom: $space-4; // Keep space between cards
+}
+
+// ── Status Header ─────────────────────────────────────────
+.statusHeader {
+  padding: $space-4 $space-5;
+  border-bottom: 1px solid $color-border-light;
+  @include flex-start;
+}
+
+.statusLeft {
+  @include flex-start;
+  gap: $space-3;
+}
+
+.statusLabel {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+}
+
+.statusDate {
+  font-size: $font-size-sm;
+  color: $color-gray-dark;
+  margin-top: 1px;
+}
+
+.statusBagIcon, .statusCheckIcon {
+  width: 24px; height: 24px;
+  flex-shrink: 0;
+  color: $color-black; // Default icon color in image seems black/dark
+}
+
+.statusCheckIcon {
+  color: $color-success;
+}
+
+// ── Product Row ───────────────────────────────────────────
+.productRow {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  padding: $space-4 $space-5;
+  cursor: pointer;
+  text-decoration: none;
+  background: $color-white;
+  transition: background $transition-fast;
+  &:hover { background: $color-bg-light; }
+}
+
+.imageWrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  background: $color-bg-light;
+
+  @include mobile { width: 70px; height: 70px; }
+}
+
+.info {
+  flex: 1;
+  @include flex-col;
+  gap: 2px;
+  min-width: 0;
+}
+
+.brand {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+}
+
+.name {
+  font-size: $font-size-sm;
+  color: $color-dark;
+  @include truncate(2);
+  line-height: 1.4;
+}
+
+.size {
+  font-size: $font-size-xs;
+  color: $color-dark;
+  margin-top: $space-1;
+  strong { font-weight: $font-weight-bold; }
+}
+
+.arrow {
+  width: 20px; height: 20px;
+  color: $color-black;
+  flex-shrink: 0;
+}
+
+// ── Review Row (Footer) ───────────────────────────────────
+.reviewRow {
+  @include flex-between;
+  padding: $space-3 $space-5;
+  background: #EFEFEF; // Match Figma gray footer
+  border-top: 1px solid $color-border-light;
+}
+
+.reviewLeft {
+  @include flex-col;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.starsAndMedal {
+  @include flex-start;
+  gap: $space-2;
+}
+
+.rewardIcon { font-size: 16px; }
+
+.rewardText {
+  font-size: $font-size-xs;
+  color: $color-dark;
+  margin-left: 24px; // Align under stars
+  strong { font-weight: $font-weight-bold; color: $color-black; }
+}
+
+.writeReview {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+  text-decoration: none;
+  transition: color $transition-fast;
+  &:hover { color: $color-primary; }
+}
+

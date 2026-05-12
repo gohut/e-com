@@ -1,0 +1,87 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.page { @include flex-col; gap: $space-4; }
+
+.breadcrumb {
+  @include flex-start; gap: $space-2; font-size: $font-size-sm; color: $color-gray;
+  a { color: $color-gray; &:hover { color: $color-primary; } }
+  span { color: $color-dark; font-weight: $font-weight-medium; &:first-of-type { color: $color-gray; } }
+}
+
+.card { @include card-base; overflow: visible; }
+
+.productRow {
+  @include flex-start; gap: $space-4; padding: $space-5;
+  border-bottom: 1px solid $color-border-light;
+  background: $color-bg-light;
+}
+
+.imageWrap {
+  position: relative; width: 80px; height: 80px; flex-shrink: 0;
+  border-radius: $radius-sm; overflow: hidden; background: $color-white; border: 1px solid $color-border;
+}
+
+.productInfo { @include flex-col; gap: $space-1; }
+.brand  { font-size: $font-size-md; font-weight: $font-weight-bold; color: $color-dark; }
+.name   { font-size: $font-size-sm; color: $color-gray-dark; @include truncate(2); }
+.size   { font-size: $font-size-sm; color: $color-gray; strong { color: $color-dark; } }
+
+.form { @include flex-col; gap: $space-6; padding: $space-6; }
+
+.fieldGroup { @include flex-col; gap: $space-2; }
+
+.label {
+  font-size: $font-size-base; font-weight: $font-weight-semibold; color: $color-dark;
+}
+.required { color: $color-primary; }
+
+.ratingWrap { @include flex-start; gap: $space-3; }
+.ratingText { font-size: $font-size-sm; color: $color-gray; font-style: italic; }
+
+.input, .textarea {
+  border: 1.5px solid $color-border; border-radius: $radius-sm;
+  padding: $space-3 $space-4; font-size: $font-size-base;
+  color: $color-dark; background: $color-white; width: 100%;
+  font-family: $font-family;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+  &:focus { border-color: $color-dark; box-shadow: $shadow-xs; }
+  &::placeholder { color: $color-gray-light; }
+  &.errorField { border-color: $color-danger; }
+}
+
+.textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+.charCount { font-size: $font-size-xs; color: $color-gray; text-align: right; margin-top: -$space-1; }
+.error     { font-size: $font-size-xs; color: $color-danger; }
+
+.actions { @include flex-between; gap: $space-4; padding-top: $space-2; }
+
+.cancelBtn {
+  @include btn-base; flex: 1;
+  border: 1.5px solid $color-border; background: $color-white; color: $color-gray-dark;
+  &:hover { background: $color-bg-light; }
+}
+
+.submitBtn {
+  @include btn-base; flex: 2;
+  background: $color-primary; color: $color-white;
+  &:hover { background: $color-primary-hover; }
+}
+
+// ── Success state ──────────────────────────────────────
+.success {
+  @include flex-col; @include flex-center; gap: $space-5;
+  text-align: center; padding: $space-12;
+}
+
+.successIcon { font-size: 64px; }
+
+.success h2 { font-size: $font-size-2xl; font-weight: $font-weight-bold; color: $color-dark; }
+.success p  { font-size: $font-size-md; color: $color-gray; }
+
+.backBtn {
+  @include btn-base;
+  background: $color-primary; color: $color-white;
+  padding: $space-3 $space-8; border-radius: $radius-full;
+  &:hover { background: $color-primary-hover; }
+}

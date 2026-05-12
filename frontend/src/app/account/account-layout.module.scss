@@ -1,0 +1,62 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-6;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-6 $space-6;
+
+  @include tablet { padding: $space-4; gap: $space-4; }
+  @include mobile { flex-direction: column; padding: $space-3; gap: $space-3; }
+}
+
+.desktopSidebar {
+  flex-shrink: 0;
+  @include mobile { display: none; }
+}
+
+.mobileMenuTrigger {
+  display: none;
+  @include mobile {
+    @include flex-start;
+    gap: $space-2;
+    width: 100%;
+    padding: $space-3 $space-4;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-dark;
+    cursor: pointer;
+
+    svg { width: 20px; height: 20px; }
+    &:hover { background: $color-bg-light; }
+  }
+}
+
+.mobileOverlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: $z-overlay;
+  animation: fadeIn $transition-fast;
+}
+
+.mobileSidebar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 280px;
+  overflow-y: auto;
+  animation: slideIn $transition-base;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }

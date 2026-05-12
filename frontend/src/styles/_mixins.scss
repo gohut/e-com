@@ -1,0 +1,61 @@
+@use './variables' as *;
+
+// --- Breakpoints ---
+@mixin mobile   { @media (max-width: 768px)  { @content; } }
+@mixin tablet   { @media (max-width: 1024px) { @content; } }
+@mixin desktop  { @media (min-width: 1025px) { @content; } }
+@mixin sm-mobile{ @media (max-width: 480px)  { @content; } }
+
+// --- Flexbox ---
+@mixin flex-center  { display: flex; align-items: center; justify-content: center; }
+@mixin flex-between { display: flex; align-items: center; justify-content: space-between; }
+@mixin flex-start   { display: flex; align-items: center; justify-content: flex-start; }
+@mixin flex-col     { display: flex; flex-direction: column; }
+
+// --- Card ---
+@mixin card-base {
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+@mixin card-hover {
+  transition: box-shadow $transition-base, transform $transition-base;
+  &:hover { box-shadow: $shadow-md; transform: translateY(-1px); }
+}
+
+// --- Text Truncation ---
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box; -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical; overflow: hidden;
+  }
+}
+
+// --- Focus Ring ---
+@mixin focus-ring {
+  &:focus-visible { outline: 2px solid $color-primary; outline-offset: 2px; }
+}
+
+// --- Button ---
+@mixin btn-base {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: $space-2; padding: $space-3 $space-5;
+  border-radius: $radius-sm; font-size: $font-size-base;
+  font-weight: $font-weight-semibold; font-family: $font-family;
+  cursor: pointer; border: none;
+  transition: background-color $transition-fast, transform $transition-fast;
+  &:active { transform: scale(0.98); }
+  @include focus-ring;
+}
+
+// --- Scrollbar ---
+@mixin custom-scrollbar {
+  scrollbar-width: thin; scrollbar-color: $color-gray-light transparent;
+  &::-webkit-scrollbar { width: 4px; height: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: $color-gray-light; border-radius: $radius-full; }
+}

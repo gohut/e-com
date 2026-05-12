@@ -1,0 +1,89 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.sidebar {
+  width: $sidebar-width;
+  flex-shrink: 0;
+  background: $color-white;
+  border: 1px solid $color-border;
+  overflow: hidden;
+  @include flex-col;
+  align-self: flex-start;
+  position: sticky;
+  top: calc(#{$navbar-height} + #{$pincode-height} + #{$category-height} + #{$space-4});
+
+  @include tablet {
+    width: 220px;
+  }
+}
+
+.overview {
+  padding: $space-4 $space-5;
+}
+
+.overviewLink {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+  text-decoration: none;
+  &:hover { color: $color-primary; }
+}
+
+.nav {
+  @include flex-col;
+  padding-bottom: $space-4;
+}
+
+.navItem {
+  @include flex-between;
+  padding: $space-3 $space-5;
+  font-size: $font-size-sm;
+  color: $color-dark;
+  text-decoration: none;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: $color-bg-light;
+  }
+
+  &.active {
+    background: $color-border-light; // A light gray
+  }
+
+  @include tablet { padding: $space-3 $space-4; }
+}
+
+.navText {
+  text-transform: uppercase;
+  // Except for "Cards and UPI" we probably need to let JS handle it or just use text-transform
+}
+
+.chevron {
+  width: 14px;
+  height: 14px;
+  color: $color-dark;
+  flex-shrink: 0;
+}
+
+.logoutSection {
+  padding: $space-4 $space-5;
+  margin-top: $space-4;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: $space-3 $space-4;
+  border: 1px solid $color-primary-light; // Or a specific red like #FF4D6A
+  color: $color-primary-light;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  font-family: $font-family;
+  background: transparent;
+  cursor: pointer;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: $color-primary-bg;
+  }
+}
+

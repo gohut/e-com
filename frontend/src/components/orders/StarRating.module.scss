@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1px;
+  color: $color-gray-light;
+  transition: color $transition-fast, transform $transition-fast;
+  line-height: 0;
+
+  &:disabled { cursor: default; }
+
+  &:not(:disabled):hover { transform: scale(1.15); }
+
+  &.filled { color: #F2994A; }
+
+  svg { display: block; }
+}
+
+// Size variants
+.sm  svg { width: 14px; height: 14px; }
+.md  svg { width: 18px; height: 18px; }
+.lg  svg { width: 24px; height: 24px; }

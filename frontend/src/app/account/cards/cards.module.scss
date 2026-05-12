@@ -1,0 +1,95 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.page { @include flex-col; gap: $space-6; max-width: 560px; }
+
+.pageTitle {
+  font-size: $font-size-2xl; font-weight: $font-weight-bold;
+  color: $color-dark; letter-spacing: 1px;
+}
+
+// ── Cashback Carousel ──────────────────────────────────
+.carouselWrap { @include flex-col; gap: $space-4; }
+
+.cashbackBanner {
+  @include flex-start; gap: $space-4;
+  padding: $space-4 $space-5;
+  border: 1px solid $color-border; border-radius: $radius-md;
+  background: $color-white;
+  transition: box-shadow $transition-base;
+  &:hover { box-shadow: $shadow-sm; }
+}
+
+.bannerIcon {
+  width: 52px; height: 52px; flex-shrink: 0;
+  @include flex-center;
+  background: $color-bg-light; border-radius: $radius-md;
+  color: $color-dark;
+}
+
+.cashbackPercent { font-size: $font-size-lg; font-weight: $font-weight-bold; color: $color-dark; }
+.cashbackDesc    { font-size: $font-size-sm; color: $color-gray; margin-top: 2px; }
+
+.dots { @include flex-center; gap: $space-2; }
+
+.dot {
+  width: 8px; height: 8px; border-radius: $radius-full;
+  background: $color-border; border: none; cursor: pointer;
+  transition: background $transition-fast, width $transition-fast;
+  padding: 0;
+  &.dotActive { background: $color-dark; width: 20px; }
+}
+
+// ── Info Text ──────────────────────────────────────────
+.infoText { font-size: $font-size-sm; color: $color-gray-dark; line-height: 1.6; }
+.knowMore { color: $color-dark; font-weight: $font-weight-semibold; text-decoration: underline; &:hover { color: $color-primary; } }
+
+// ── Saved Cards ────────────────────────────────────────
+.savedSection { @include flex-col; gap: $space-3; }
+.sectionTitle { font-size: $font-size-md; font-weight: $font-weight-bold; color: $color-dark; }
+.savedList    { @include flex-col; gap: $space-3; }
+
+.savedCard {
+  @include flex-start; gap: $space-4;
+  padding: $space-4 $space-5; border: 1px solid $color-border;
+  border-radius: $radius-md; background: $color-white;
+  transition: box-shadow $transition-base;
+  &:hover { box-shadow: $shadow-sm; }
+}
+
+.cardChip {
+  width: 48px; height: 48px; @include flex-center;
+  background: $color-bg-light; border-radius: $radius-sm; flex-shrink: 0; color: $color-gray-dark;
+}
+
+.cardDetails { @include flex-col; gap: 2px; flex: 1; }
+.cardBrand   { font-size: $font-size-sm; font-weight: $font-weight-bold; color: $color-dark; }
+.cardNum     { font-size: $font-size-base; color: $color-gray-dark; letter-spacing: 2px; }
+.cardExpiry  { font-size: $font-size-xs; color: $color-gray; }
+
+.removeCardBtn {
+  font-size: $font-size-sm; color: $color-danger; background: none;
+  border: none; cursor: pointer; font-weight: $font-weight-medium;
+  padding: $space-2; border-radius: $radius-sm;
+  transition: background $transition-fast;
+  &:hover { background: $color-danger-bg; }
+}
+
+// ── Form Toggle ────────────────────────────────────────
+.addCardToggle {
+  @include btn-base; align-self: flex-start;
+  border: 1.5px dashed $color-border; background: $color-white;
+  color: $color-gray-dark; padding: $space-4 $space-6;
+  border-radius: $radius-md; font-size: $font-size-base;
+  transition: all $transition-fast;
+  &:hover { border-color: $color-dark; color: $color-dark; background: $color-bg-light; }
+}
+
+.formSection  { @include flex-col; gap: $space-4; }
+
+.cancelAddBtn {
+  @include btn-base; align-self: flex-start;
+  background: none; color: $color-gray; font-size: $font-size-sm;
+  border: 1px solid $color-border; padding: $space-2 $space-4;
+  &:hover { background: $color-bg-light; color: $color-dark; }
+}

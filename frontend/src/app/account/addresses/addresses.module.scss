@@ -1,0 +1,100 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.page { @include flex-col; gap: $space-6; }
+
+.pageTitle {
+  font-size: $font-size-2xl; font-weight: $font-weight-bold;
+  color: $color-dark; letter-spacing: 1px;
+}
+
+.section    { @include flex-col; gap: $space-4; }
+.sectionHeader { @include flex-between; align-items: flex-start; flex-wrap: wrap; gap: $space-3; }
+.sectionTitle  { font-size: $font-size-lg; font-weight: $font-weight-bold; color: $color-dark; letter-spacing: 0.5px; }
+
+.addBtn {
+  border: 1.5px solid $color-dark; background: $color-white;
+  color: $color-dark; font-size: $font-size-sm; font-weight: $font-weight-semibold;
+  padding: $space-2 $space-4; border-radius: $radius-sm; cursor: pointer;
+  letter-spacing: 0.5px; font-family: $font-family;
+  transition: all $transition-fast;
+  &:hover { background: $color-dark; color: $color-white; }
+}
+
+.addrGrid { display: grid; grid-template-columns: 1fr 1fr; gap: $space-4; @include mobile { grid-template-columns: 1fr; } }
+
+// ── Modal ─────────────────────────────────────────────
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  z-index: $z-modal; @include flex-center; padding: $space-4;
+  animation: fadeIn $transition-fast;
+}
+
+.modal {
+  background: $color-white; border-radius: $radius-lg;
+  width: 100%; max-width: 520px; max-height: 90vh;
+  @include flex-col; box-shadow: $shadow-xl;
+  animation: slideUp $transition-base;
+}
+
+.modalHeader {
+  @include flex-between; padding: $space-5 $space-6;
+  border-bottom: 1px solid $color-border;
+  h3 { font-size: $font-size-xl; font-weight: $font-weight-bold; color: $color-dark; }
+}
+
+.closeBtn {
+  width: 32px; height: 32px; @include flex-center;
+  font-size: $font-size-lg; color: $color-gray; background: none; border: none; cursor: pointer;
+  &:hover { color: $color-primary; }
+}
+
+.formBody {
+  @include flex-col; gap: $space-3; padding: $space-5 $space-6;
+  overflow-y: auto; @include custom-scrollbar;
+}
+
+.fieldGroup { @include flex-col; gap: $space-1; }
+
+.input {
+  border: 1.5px solid $color-border; border-radius: $radius-sm;
+  padding: $space-3 $space-4; font-size: $font-size-base;
+  color: $color-dark; background: $color-white; width: 100%; font-family: $font-family;
+  transition: border-color $transition-fast;
+  &:focus { border-color: $color-dark; }
+  &::placeholder { color: $color-gray-light; }
+  &.inputError { border-color: $color-danger; }
+}
+
+.errorMsg { font-size: $font-size-xs; color: $color-danger; }
+
+.labelRow { display: flex; flex-wrap: wrap; gap: $space-2; margin-top: $space-1; }
+
+.labelChip {
+  padding: $space-2 $space-4; border: 1.5px solid $color-border;
+  border-radius: $radius-full; font-size: $font-size-sm; font-weight: $font-weight-medium;
+  background: $color-white; color: $color-gray-dark; cursor: pointer;
+  transition: all $transition-fast; font-family: $font-family;
+  &:hover { border-color: $color-dark; color: $color-dark; }
+  &.activeLabel { border-color: $color-primary; background: $color-primary-bg; color: $color-primary; }
+}
+
+.modalFooter {
+  @include flex-between; gap: $space-3; padding: $space-5 $space-6;
+  border-top: 1px solid $color-border;
+}
+
+.cancelBtn {
+  @include btn-base; flex: 1; border: 1.5px solid $color-border;
+  background: $color-white; color: $color-gray-dark;
+  &:hover { background: $color-bg-light; }
+}
+
+.saveBtn {
+  @include btn-base; flex: 1;
+  background: $color-primary; color: $color-white;
+  &:hover { background: $color-primary-hover; }
+}
+
+@keyframes fadeIn  { from { opacity: 0; }            to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }

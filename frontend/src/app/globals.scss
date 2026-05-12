@@ -1,0 +1,30 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+@use '../styles/typography';
+// Global SCSS — E-COMM
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $color-dark;
+  background-color: $color-white;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; transition: color $transition-fast; }
+button { cursor: pointer; border: none; background: none; font-family: $font-family; }
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; }
+input, textarea, select { font-family: $font-family; outline: none; }
+h1, h2, h3, h4, h5, h6 { font-family: $font-family; font-weight: $font-weight-bold; line-height: 1.2; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border-width: 0;
+}

@@ -1,0 +1,304 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  background: $color-white;
+  box-shadow: $shadow-sm;
+  width: 100%;
+}
+
+// ── Top Bar ──────────────────────────────────────────────
+.topBar {
+  @include flex-between;
+  height: $navbar-height;
+  padding: 0 $space-6;
+  gap: $space-4;
+  border-bottom: 1px solid $color-border-light;
+
+  @include mobile { padding: 0 $space-4; gap: $space-2; }
+}
+
+.hamburger {
+  @include flex-col;
+  gap: 5px;
+  padding: $space-2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: $color-dark;
+    border-radius: $radius-full;
+    transition: transform $transition-base, opacity $transition-fast;
+  }
+
+  &:hover span { background: $color-primary; }
+}
+
+// ── Logo ─────────────────────────────────────────────────
+.logo {
+  @include flex-start;
+  gap: $space-2;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  width: 24px;
+  height: 24px;
+
+  span {
+    display: block;
+    background: $color-black;
+    border-radius: 1px;
+  }
+}
+
+.logoText {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-black;
+  letter-spacing: 3px;
+  color: $color-black;
+  text-transform: uppercase;
+
+  @include mobile { font-size: $font-size-lg; letter-spacing: 2px; }
+}
+
+// ── Search Bar ───────────────────────────────────────────
+.searchBar {
+  @include flex-start;
+  gap: $space-2;
+  flex: 1;
+  max-width: 420px;
+  height: 40px;
+  border: 1.5px solid $color-border;
+  border-radius: $radius-sm;
+  padding: 0 $space-3;
+  background: $color-white;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &:focus-within {
+    border-color: $color-dark;
+    box-shadow: $shadow-xs;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: $font-size-base;
+    color: $color-dark;
+    background: transparent;
+    &::placeholder { color: $color-gray-light; }
+  }
+
+  @include mobile {
+    display: none;
+    &.searchVisible {
+      display: flex;
+      position: absolute;
+      top: $navbar-height;
+      left: 0; right: 0;
+      max-width: 100%;
+      border-radius: 0;
+      border-left: none; border-right: none;
+      z-index: $z-dropdown;
+    }
+  }
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  color: $color-gray;
+  flex-shrink: 0;
+}
+
+// ── Actions ──────────────────────────────────────────────
+.actions {
+  @include flex-start;
+  gap: $space-1;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-md;
+  color: $color-dark;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background $transition-fast, color $transition-fast;
+
+  svg { width: 22px; height: 22px; }
+
+  &:hover { background: $color-bg-light; color: $color-primary; }
+}
+
+.cartBtn {
+  @include mobile { display: flex; }
+}
+
+// ── Pincode Bar ──────────────────────────────────────────
+.pincodeBar {
+  padding: 0 $space-6;
+  height: $pincode-height;
+  @include flex-start;
+  border-bottom: 1px solid $color-border-light;
+  background: $color-white;
+
+  @include mobile { padding: 0 $space-4; }
+}
+
+.pincodeText {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  color: $color-dark;
+  padding: 0;
+  @include flex-start;
+  gap: 0;
+}
+
+.pincodeLink { color: $color-primary; font-weight: $font-weight-medium; }
+.pincodeSep  { color: $color-gray; }
+
+// ── Category Nav ─────────────────────────────────────────
+.categoryNav {
+  padding: 0 $space-6;
+  height: $category-height;
+  border-bottom: 1px solid $color-border-light;
+  @include mobile { padding: 0 $space-3; }
+}
+
+.categoryList {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 0;
+  overflow-x: auto;
+  @include custom-scrollbar;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+.categoryItem {
+  white-space: nowrap;
+  padding: 0 $space-4;
+  height: 100%;
+  @include flex-center;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-gray-dark;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color $transition-fast, border-color $transition-fast;
+
+  &:hover { color: $color-dark; }
+
+  &.active {
+    color: $color-primary;
+    border-bottom-color: $color-primary;
+    font-weight: $font-weight-semibold;
+  }
+
+  @include mobile { padding: 0 $space-3; font-size: $font-size-sm; }
+}
+
+// ── Mobile Menu ──────────────────────────────────────────
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: $z-overlay;
+  animation: fadeIn $transition-fast;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 0; left: 0;
+  width: 280px;
+  height: 100%;
+  background: $color-white;
+  @include flex-col;
+  box-shadow: $shadow-lg;
+  animation: slideIn $transition-base;
+  overflow-y: auto;
+}
+
+.mobileMenuHeader {
+  @include flex-between;
+  padding: $space-5 $space-4;
+  border-bottom: 1px solid $color-border;
+}
+
+.closeBtn {
+  width: 32px; height: 32px;
+  @include flex-center;
+  font-size: $font-size-lg;
+  color: $color-gray;
+  background: none; border: none; cursor: pointer;
+  &:hover { color: $color-primary; }
+}
+
+.mobileMenuItem {
+  padding: $space-4;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-dark;
+  border-bottom: 1px solid $color-border-light;
+  transition: background $transition-fast, color $transition-fast;
+  &:hover { background: $color-bg-light; color: $color-primary; }
+}
+
+// ── Pincode Modal ────────────────────────────────────────
+.pincodeOverlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: $z-modal;
+  @include flex-center;
+}
+
+.pincodeModal {
+  background: $color-white;
+  border-radius: $radius-lg;
+  padding: $space-8;
+  width: 320px;
+  @include flex-col;
+  gap: $space-4;
+  box-shadow: $shadow-xl;
+
+  h3 { font-size: $font-size-xl; font-weight: $font-weight-bold; }
+}
+
+.pincodeInput {
+  border: 1.5px solid $color-border;
+  border-radius: $radius-sm;
+  padding: $space-3 $space-4;
+  font-size: $font-size-base;
+  &:focus { border-color: $color-primary; }
+}
+
+.checkBtn {
+  @include btn-base;
+  background: $color-primary;
+  color: $color-white;
+  &:hover { background: $color-primary-hover; }
+}
+
+// ── Animations ───────────────────────────────────────────
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }

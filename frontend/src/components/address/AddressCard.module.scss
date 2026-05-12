@@ -1,0 +1,84 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  @include card-base;
+  padding: $space-5;
+  @include flex-col;
+  gap: $space-3;
+  transition: box-shadow $transition-base;
+  &:hover { box-shadow: $shadow-sm; }
+}
+
+.topRow {
+  @include flex-between;
+  align-items: flex-start;
+}
+
+.name {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-dark;
+  letter-spacing: 0.3px;
+}
+
+.label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  padding: 3px $space-3;
+  border-radius: $radius-full;
+  letter-spacing: 0.5px;
+
+  &.label_HOME    { background: $color-info-bg;    color: $color-info; }
+  &.label_COLLEGE { background: $color-warning-bg; color: $color-warning; }
+  &.label_WORK    { background: $color-success-bg; color: $color-success; }
+  &.label_OTHER   { background: $color-bg-light;   color: $color-gray; }
+}
+
+.addressLines {
+  @include flex-col;
+  gap: 2px;
+  p {
+    font-size: $font-size-base;
+    color: $color-gray-dark;
+    line-height: 1.5;
+  }
+}
+
+.mobile {
+  font-size: $font-size-base;
+  color: $color-dark;
+  strong { font-weight: $font-weight-semibold; }
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid $color-border;
+  margin: 0 (-$space-5) (-$space-5);
+
+  button {
+    padding: $space-3;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.5px;
+    font-family: $font-family;
+    cursor: pointer;
+    transition: background $transition-fast;
+  }
+}
+
+.editBtn {
+  background: $color-white;
+  color: $color-dark;
+  border: none;
+  border-right: 1px solid $color-border;
+  &:hover { background: $color-bg-light; }
+}
+
+.removeBtn {
+  background: $color-white;
+  color: $color-danger;
+  border: none;
+  &:hover { background: $color-danger-bg; }
+}

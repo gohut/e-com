@@ -1,0 +1,179 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: $z-modal;
+  @include flex-center;
+  padding: $space-4;
+  animation: fadeIn $transition-fast ease-out;
+}
+
+.modal {
+  width: 100%;
+  max-width: 600px;
+  background: $color-white;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  box-shadow: $shadow-xl;
+  animation: slideUp $transition-base ease-out;
+}
+
+.header {
+  @include flex-center;
+  position: relative;
+  padding: $space-4;
+  border-bottom: 1px solid $color-border-light;
+}
+
+.closeBtn {
+  position: absolute;
+  left: $space-4;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: $color-gray-dark;
+  cursor: pointer;
+  &:hover { color: $color-black; }
+}
+
+.title {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $color-black;
+}
+
+.banner {
+  @include flex-start;
+  gap: $space-3;
+  padding: $space-3 $space-5;
+  background: #F3F3F3;
+  border-bottom: 1px solid $color-border-light;
+}
+
+.bannerText {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+}
+
+.content {
+  padding: $space-5;
+  @include flex-col;
+  gap: $space-5;
+}
+
+.productInfo {
+  @include flex-start;
+  gap: $space-4;
+}
+
+.imageWrap {
+  width: 140px;
+  height: 80px;
+  position: relative;
+  background: $color-bg-light;
+  flex-shrink: 0;
+  border: 1px solid $color-border-light;
+}
+
+.productDetails {
+  @include flex-col;
+  gap: $space-2;
+}
+
+.productTitle {
+  font-size: $font-size-sm;
+  color: $color-dark;
+  line-height: 1.4;
+}
+
+.reviewInput {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid $color-border;
+  padding: $space-3;
+  font-family: inherit;
+  font-size: $font-size-sm;
+  resize: vertical;
+  outline: none;
+  &:focus { border-color: $color-dark; }
+}
+
+.uploadWrap {
+  @include flex-start;
+  gap: $space-3;
+}
+
+.uploadLabel {
+  @include flex-center;
+  width: 50px;
+  height: 50px;
+  border: 1px dashed $color-gray-dark;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  color: $color-dark;
+  transition: all $transition-fast;
+  &:hover { border-color: $color-black; color: $color-black; }
+
+  svg { width: 24px; height: 24px; }
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.addPhotosBtn {
+  background: #2B364A;
+  color: $color-white;
+  padding: $space-2 $space-4;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  &:hover { background: #1a2233; }
+}
+
+.previewFiles {
+  @include flex-start;
+  gap: $space-2;
+  margin-top: $space-2;
+  flex-wrap: wrap;
+}
+
+.previewItem {
+  font-size: 12px;
+  background: $color-bg-light;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: $color-dark;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: $color-gray-dark;
+  line-height: 1.5;
+  strong { font-weight: $font-weight-bold; color: $color-black; }
+}
+
+.submitBtn {
+  width: 100%;
+  background: $color-black;
+  color: $color-white;
+  padding: $space-3;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  border: none;
+  cursor: pointer;
+  transition: background $transition-fast;
+  &:hover { background: #333; }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
