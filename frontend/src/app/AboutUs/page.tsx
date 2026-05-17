@@ -1,8 +1,9 @@
+import type { ReactNode } from "react";
 import styles from "../page.module.css";
 
 type IconButtonProps = {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const aboutUsContent = [
@@ -78,14 +79,14 @@ function AboutUs() {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.aboutContainer}>
-        
-        <button className={styles.backButton} type="button">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M15 6l-6 6 6 6" />
-          </svg>
-        </button>
-
-        <h1 className={styles.aboutTitle}>ABOUT US</h1>
+        <div className={styles.aboutHeader}>
+          <button className={styles.backButton} type="button" aria-label="Go back">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 6l-6 6 6 6" />
+            </svg>
+          </button>
+          <h1 className={styles.aboutTitle}>About Us</h1>
+        </div>
 
         <div className={styles.contentWrapper}>
           {aboutUsContent.map((item) => (
@@ -131,8 +132,8 @@ function AboutUs() {
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className={`${styles.page} ${styles.aboutPage}`}>
+      <main className={`${styles.main} ${styles.aboutMain}`}>
         <Navbar />
         <AboutUs />
       </main>

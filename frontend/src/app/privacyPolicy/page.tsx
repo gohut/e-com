@@ -1,8 +1,9 @@
+import type { ReactNode } from "react";
 import styles from "../page.module.css";
 
 type IconButtonProps = {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const privacyPolicyItems = [
@@ -72,6 +73,19 @@ function Navbar() {
   );
 }
 
+function MobileHeader() {
+  return (
+    <header className={styles.privacyMobileHeader}>
+      <button className={styles.privacyMobileBackButton} type="button" aria-label="Go back">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 6l-6 6 6 6" />
+        </svg>
+      </button>
+      <h1 className={styles.privacyMobileTitle}>Privacy Policy</h1>
+    </header>
+  );
+}
+
 function PrivacyPolicy() {
   return (
     <section className={`${styles.termsSection} ${styles.centeredPolicySection}`}>
@@ -108,9 +122,10 @@ function PrivacyPolicy() {
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className={`${styles.page} ${styles.privacyPage}`}>
+      <main className={`${styles.main} ${styles.privacyMain}`}>
         <Navbar />
+        <MobileHeader />
         <PrivacyPolicy />
       </main>
     </div>

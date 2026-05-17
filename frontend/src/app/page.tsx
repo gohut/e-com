@@ -1,9 +1,10 @@
 "use client"
+import type { ReactNode } from "react";
 import styles from "./page.module.css";
 
 type IconButtonProps = {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 function IconButton({ label, children }: IconButtonProps) {
@@ -58,6 +59,19 @@ function Navbar() {
           </svg>
         </IconButton>
       </div>
+    </header>
+  );
+}
+
+function MobileHeader() {
+  return (
+    <header className={styles.homeMobileHeader}>
+      <button className={styles.homeMobileBackButton} type="button" aria-label="Go back">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 6l-6 6 6 6" />
+        </svg>
+      </button>
+      <h1 className={styles.homeMobileTitle}>Policy</h1>
     </header>
   );
 }
@@ -128,9 +142,10 @@ WE FOLLOW GENERALLY ACCEPTED STANDARDS TO PROTECT THE PERSONAL INFORMATION SUBMI
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className={`${styles.page} ${styles.homePage}`}>
+      <main className={`${styles.main} ${styles.homeMain}`}>
         <Navbar />
+        <MobileHeader />
         <TermsAndConditions />
       </main>
     </div>

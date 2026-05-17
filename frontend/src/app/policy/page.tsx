@@ -1,8 +1,9 @@
+import type { ReactNode } from "react";
 import styles from "../page.module.css";
 
 type IconButtonProps = {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const returnPolicyItems = [
@@ -72,6 +73,19 @@ function Navbar() {
   );
 }
 
+function MobileHeader() {
+  return (
+    <header className={styles.policyMobileHeader}>
+      <button className={styles.policyMobileBackButton} type="button" aria-label="Go back">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 6l-6 6 6 6" />
+        </svg>
+      </button>
+      <h1 className={styles.policyMobileTitle}>Policy</h1>
+    </header>
+  );
+}
+
 function TermsAndConditions() {
   return (
     <section className={styles.termsSection}>
@@ -102,9 +116,10 @@ function TermsAndConditions() {
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className={`${styles.page} ${styles.policyPage}`}>
+      <main className={`${styles.main} ${styles.policyMain}`}>
         <Navbar />
+        <MobileHeader />
         <TermsAndConditions />
       </main>
     </div>
