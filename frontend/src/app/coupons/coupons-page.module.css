@@ -1,0 +1,320 @@
+﻿.page {
+  min-height: 100vh;
+  background: #ececec;
+}
+
+.desktopOnly {
+  display: block;
+}
+
+.mobileHeader,
+.mobileBottomBar {
+  display: none;
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 56px 60px;
+}
+
+.scrollArea {
+  width: 100%;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 36px;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+}
+
+.toolbar {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs {
+  display: inline-flex;
+  border: 1px solid #a6a6a6;
+}
+
+.tabItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #efefef;
+  height: 32px;
+  padding: 0 14px;
+  font-size: 16px;
+}
+
+.activeTab {
+  background: #000;
+  color: #fff;
+}
+
+.sortWrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.sortBtn {
+  min-width: 160px;
+  height: 34px;
+  border: 1px solid #9d9d9d;
+  background: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 16px;
+}
+
+.contentWrap {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 336px 1fr;
+  gap: 42px;
+}
+
+.sidebarWrap {
+  width: 100%;
+}
+
+.couponsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 42px;
+}
+
+.couponCard {
+  border: 1px solid #bdbdbd;
+  background: #efefef;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+}
+
+.couponImage {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.couponImage img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.couponInfo {
+  border-left: 1px solid #bdbdbd;
+  padding: 12px 14px 10px;
+}
+
+.couponInfo h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.couponInfo p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.codeRow,
+.expiryRow {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.codeRow span,
+.expiryRow span {
+  font-size: 16px;
+}
+
+.codeRow strong,
+.expiryRow strong {
+  font-weight: 700;
+}
+
+.copyIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.viewRow {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewRow span {
+  font-size: 16px;
+}
+
+.arrow {
+  font-size: 28px;
+  line-height: 1;
+}
+
+@media (max-width: 1100px) {
+  .main {
+    padding: 16px;
+  }
+
+  .contentWrap {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebarWrap {
+    display: none;
+  }
+
+  .couponsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileHeader {
+    height: 84px;
+    border-bottom: 1px solid #bcbcbc;
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    align-items: center;
+    padding: 0 18px;
+    flex-shrink: 0;
+  }
+
+  .mobileBack {
+    border: none;
+    background: transparent;
+    font-size: 34px;
+    line-height: 1;
+    color: #111;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+  }
+
+  .mobileHeader h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .main {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .scrollArea {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 18px 0 96px;
+  }
+
+  .pageTitle {
+    display: none;
+  }
+
+  .toolbar {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sortWrap,
+  .sidebarWrap {
+    display: none;
+  }
+
+  .tabs {
+    margin: 0 auto;
+  }
+
+  .tabItem {
+    height: 42px;
+    min-width: 118px;
+    padding: 0 14px;
+  }
+
+  .contentWrap {
+    margin-top: 14px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 14px;
+  }
+
+  .couponsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .couponCard {
+    grid-template-columns: 132px 1fr;
+  }
+
+  .mobileBottomBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 84px;
+    background: #efefef;
+    border-top: 1px solid #cecece;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 50;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .mobileBottomBtn {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    color: #111;
+  }
+
+  .mobileBottomBtn:first-child {
+    border-right: 1px solid #d1d1d1;
+  }
+}

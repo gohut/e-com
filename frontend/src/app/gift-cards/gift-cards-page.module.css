@@ -1,0 +1,408 @@
+﻿.page {
+  min-height: 100vh;
+  background: #ececec;
+}
+
+.desktopOnly {
+  display: block;
+}
+
+.mobileHeader,
+.mobileBottomBar {
+  display: none;
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 56px 60px;
+}
+
+.scrollArea {
+  width: 100%;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 36px;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+}
+
+.toolbar {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs {
+  display: inline-flex;
+  border: 1px solid #a6a6a6;
+}
+
+.tabItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #efefef;
+  height: 32px;
+  padding: 0 14px;
+  font-size: 16px;
+}
+
+.activeTab {
+  background: #000 !important;
+  color: #fff;
+}
+
+.sortWrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.sortWrap span {
+  font-size: 16px;
+}
+
+.sortBtn {
+  min-width: 160px;
+  height: 34px;
+  border: 1px solid #9d9d9d;
+  background: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.sortBtn span {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.contentWrap {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 336px 1fr;
+  gap: 42px;
+}
+
+.sidebarWrap {
+  width: 100%;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+}
+
+.group h3 {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.38em;
+  margin-bottom: 22px;
+}
+
+.group {
+  position: relative;
+  padding-bottom: 26px;
+}
+
+.group:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: -12px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(150, 150, 150, 0),
+    rgba(150, 150, 150, 0.5) 14%,
+    rgba(150, 150, 150, 0.5) 86%,
+    rgba(150, 150, 150, 0)
+  );
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  box-shadow: none;
+}
+
+.cardTop {
+  padding: 22px 24px 24px;
+  min-height: 166px;
+}
+
+.cardAmounts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardAmounts span {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.cardBrand {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardBrand span {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+}
+
+.giftIcon {
+  width: 34px;
+  height: 34px;
+}
+
+.cardTop p {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.cardBottom {
+  background: #fff;
+  padding: 10px 14px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.cardBottom h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.cardBottom p {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wishBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.heartIcon {
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    padding: 20px 16px 40px;
+  }
+
+  .contentWrap {
+    grid-template-columns: 1fr;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileHeader {
+    height: 84px;
+    border-bottom: 1px solid #bcbcbc;
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    align-items: center;
+    padding: 0 18px;
+    flex-shrink: 0;
+  }
+
+  .mobileBack {
+    border: none;
+    background: transparent;
+    font-size: 34px;
+    line-height: 1;
+    color: #111;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+  }
+
+  .mobileHeader h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .main {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .scrollArea {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 18px 0 96px;
+  }
+
+  .pageTitle {
+    display: none;
+  }
+
+  .sidebarWrap {
+    display: none;
+  }
+
+  .toolbar {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sortWrap {
+    display: none;
+  }
+
+  .tabs {
+    margin: 0 auto;
+  }
+
+  .tabItem {
+    height: 42px;
+    min-width: 118px;
+    font-size: 16px;
+    padding: 0 14px;
+  }
+
+  .contentWrap {
+    margin-top: 14px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 14px;
+  }
+
+  .sections {
+    gap: 36px;
+  }
+
+  .group {
+    padding-bottom: 0;
+  }
+
+  .group h3 {
+    font-size: 16px;
+    letter-spacing: 0.36em;
+    margin-bottom: 20px;
+  }
+
+  .group:not(:last-child)::after {
+    display: none;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    justify-items: center;
+  }
+
+  .card {
+    width: 336px;
+    min-width: 336px;
+    max-width: 336px;
+    flex: 0 0 336px;
+  }
+
+  .cardTop {
+    min-height: 168px;
+    max-height: 168px;
+  }
+
+  .cardBottom {
+    min-height: 72px;
+    max-height: 72px;
+  }
+
+  .cardTop {
+    min-height: 168px;
+    padding: 22px 16px;
+  }
+
+  .cardBrand span {
+    letter-spacing: 0.33em;
+  }
+
+  .mobileBottomBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 84px;
+    background: #efefef;
+    border-top: 1px solid #cecece;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 50;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .mobileBottomBtn {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    color: #111;
+  }
+
+  .mobileBottomBtn:first-child {
+    border-right: 1px solid #d1d1d1;
+  }
+}

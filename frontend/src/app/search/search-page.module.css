@@ -1,0 +1,214 @@
+.searchPage {
+  min-height: 100vh;
+  background: #ececec;
+}
+
+.main {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 68px;
+}
+
+.scrollArea {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: stretch;
+}
+
+.sidebarSticky {
+  position: sticky;
+  top: 88px;
+}
+
+.mobileTopBar,
+.mobilePromo,
+.mobileBottomBar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .searchPage {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desktopNav,
+  .sidebarWrap,
+  .desktopFooter {
+    display: none;
+  }
+
+  .mobileTopBar {
+    height: 84px;
+    background: #efefef;
+    border-bottom: 1px solid #d4d4d4;
+    padding: 0 14px;
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    align-items: center;
+    column-gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .mobileIconBtn {
+    border: none;
+    background: none;
+    color: #111;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .mobileTopBar > .mobileIconBtn:first-child {
+    font-size: 48px;
+  }
+
+  .mobileIconBtn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .mobileBrandBlock {
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    line-height: 1;
+  }
+
+  .mobileBrandRow {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 24px;
+  }
+
+  .mobileBrandIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .mobileBrandRow h1 {
+    font-size: 48px;
+    line-height: 1;
+    transform: scale(0.42);
+    transform-origin: left center;
+    text-transform: lowercase;
+    margin: 0;
+  }
+
+  .mobileBrandBlock p {
+    margin: 0;
+    height: 20px;
+    font-size: 30px;
+    transform: scale(0.42);
+    transform-origin: left top;
+    color: #181818;
+    margin-left: 0;
+  }
+
+  .mobileActions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 32px;
+  }
+
+  .main {
+    max-width: none;
+    flex: 1;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .scrollArea {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 96px;
+  }
+
+  .mobilePromo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #000;
+    color: #fff;
+    min-height: 96px;
+  }
+
+  .promoCard {
+    padding: 14px 10px 12px;
+    text-align: center;
+    border-right: 1px solid #fff;
+  }
+
+  .promoCard:last-child {
+    border-right: none;
+  }
+
+  .promoCard h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .promoCard p {
+    margin-top: 4px;
+    font-size: 16px;
+  }
+
+  .promoCard button {
+    margin-top: 8px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5px 10px;
+  }
+
+  .mobileBottomBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 84px;
+    background: #efefef;
+    border-top: 1px solid #cecece;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 50;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .mobileBottomBtn {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    color: #111;
+  }
+
+  .mobileBottomBtn:first-child {
+    border-right: 1px solid #d1d1d1;
+  }
+}
+

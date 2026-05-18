@@ -1,0 +1,60 @@
+.page { min-height: 100vh; background: #ececec; }
+.topNav { height: 32px; max-width: 1440px; margin: 0 auto; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; display: flex; align-items: center; gap: 18px; overflow-x: auto; white-space: nowrap; padding: 0 68px; font-size: 16px; background: #efefef; }
+.main { max-width: 1440px; margin: 0 auto; padding: 16px 68px 40px; }
+.hero { display: grid; grid-template-columns: 1fr 420px; gap: 20px; }
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; background: #d4d4d4; }
+.galleryItem { background: #e5e5e5; aspect-ratio: 3 / 4; }
+.galleryItem img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.titleRow { display: flex; justify-content: space-between; align-items: flex-start; }
+.titleRow h1 { font-size: 18px; font-weight: 600; }
+.titleRow button { border: none; background: transparent; font-size: 28px; line-height: 1; }
+.price { margin-top: 8px; font-size: 34px; font-weight: 600; transform: scale(0.42); transform-origin: left top; }
+.price span { color: #838383; font-size: 28px; text-decoration: line-through; }
+.inclusive { margin-top: -16px; color: #666; font-size: 16px; }
+.swatches { margin-top: 14px; display: flex; gap: 8px; }
+.swatches img { width: 36px; height: 36px; border: 1px solid #c4c4c4; object-fit: cover; }
+.color { margin-top: 10px; font-size: 16px; }
+.sizes { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.sizes button { width: 36px; height: 30px; border: 1px solid #aaa; background: #efefef; font-size: 16px; }
+.primary,.secondary { width: 100%; margin-top: 10px; height: 36px; border: none; font-weight: 700; font-size: 16px; }
+.primary { background: #000; color: #fff; }
+.secondary { background: #0f0f0f; color: #fff; }
+.delivery { margin-top: 14px; border-top: 1px solid #d0d0d0; padding-top: 12px; }
+.delivery p { font-size: 16px; margin-bottom: 8px; }
+.delivery div { display: flex; }
+.delivery input { flex: 1; height: 32px; border: 1px solid #aaa; background: #efefef; padding: 0 8px; }
+.delivery button { width: 60px; border: none; background: #000; color: #fff; font-size: 16px; }
+.offers { margin-top: 14px; }
+.offers h3 { font-size: 18px; margin-bottom: 8px; }
+.offerGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.offerGrid article { border: 1px solid #c8c8c8; padding: 8px; background: #efefef; }
+.offerGrid h4 { font-size: 16px; }
+.offerGrid p { margin-top: 4px; font-size: 16px; color: #444; }
+.iconsRow { margin-top: 14px; border-top: 1px solid #d0d0d0; border-bottom: 1px solid #d0d0d0; padding: 10px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-size: 16px; color: #444; }
+.description { margin-top: 14px; }
+.description h3 { font-size: 18px; margin-bottom: 8px; }
+.description h4 { margin-top: 10px; margin-bottom: 4px; font-size: 16px; }
+.description p { font-size: 16px; line-height: 1.45; color: #333; }
+.ratingsBlock { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #222; padding-top: 26px; }
+.ratingLeft { border-right: 1px solid #222; padding-right: 40px; text-align: center; }
+.ratingLeft h3 { font-size: 16px; }
+.stars { margin-top: 4px; font-size: 20px; }
+.score { margin-top: 8px; font-size: 24px; font-weight: 600; }
+.count { margin-top: 4px; font-size: 16px; color: #666; }
+.ratingRight { padding-left: 40px; }
+.barRow { display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: center; margin-bottom: 8px; }
+.barRow span { font-size: 16px; }
+.barRow div { border: 1px solid #444; height: 12px; }
+.barRow i { display: block; height: 100%; background: linear-gradient(90deg, #d9d9d9 0%, #6f6f6f 70%, #1f1f1f 100%); }
+.reviews { margin-top: 34px; }
+.reviews h3 { font-size: 18px; margin-bottom: 14px; }
+.reviewCard { display: flex; gap: 12px; margin-bottom: 20px; }
+.reviewCard img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; }
+.reviewCard h4 { font-size: 16px; }
+.reviewCard p,.reviewCard small { font-size: 16px; line-height: 1.45; }
+.carouselSection { margin-top: 30px; }
+.carouselSection h3 { font-size: 18px; margin-bottom: 12px; }
+.cardsGrid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 1200px) { .hero { grid-template-columns: 1fr; } .cardsGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .topNav { display: none; } .main { padding: 12px; max-width: none; } .ratingsBlock { grid-template-columns: 1fr; gap: 20px; } .ratingLeft { border-right: none; padding-right: 0; } .ratingRight { padding-left: 0; } .cardsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+

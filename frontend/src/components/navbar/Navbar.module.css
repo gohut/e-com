@@ -1,0 +1,129 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: 88px;
+  width: 100%;
+  border-bottom: 1px solid #d3d3d3;
+  background: #f2f2f2;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.inner {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 68px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.menu {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  justify-self: start;
+  padding: 0;
+}
+
+.menu span {
+  display: block;
+  height: 2px;
+  width: 28px;
+  background: #111;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 14px;
+}
+
+.brandIcon {
+  width: 34px;
+  height: 34px;
+}
+
+.brandText {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.34em;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 20px;
+}
+
+.search {
+  height: 44px;
+  width: 184px;
+  border: 1px solid #737373;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f2f2f2;
+}
+
+.search span {
+  font-size: 16px;
+  color: #111;
+}
+
+.iconBtn {
+  border: none;
+  background: none;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.navIcon {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    height: 80px;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brandText {
+    font-size: 28px;
+    letter-spacing: 0.22em;
+  }
+
+  .right {
+    gap: 12px;
+  }
+
+  .search {
+    width: 144px;
+    height: 38px;
+  }
+
+  .navIcon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
