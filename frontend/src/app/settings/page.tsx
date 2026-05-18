@@ -1,18 +1,7 @@
-﻿import Footer from "@/components/footer/Footer";
+﻿import AccountSidebar from "@/components/account-sidebar/AccountSidebar";
+import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import styles from "./settings-page.module.css";
-
-const overviewItems = [
-  "Profile",
-  "Orders",
-  "Wishlist",
-  "Addresses",
-  "Gift Cards & Coupons",
-  "Settings",
-  "Preferences",
-  "Terms and Conditions",
-  "Cards & UPI",
-];
 
 const settingsItems = [
   "Privacy Policy",
@@ -47,19 +36,7 @@ export default function SettingsPage() {
 
       <main className={styles.main}>
         <section className={styles.layout}>
-          <aside className={styles.leftPanel}>
-            <h2>OVERVIEW</h2>
-            <ul>
-              {overviewItems.map((item) => (
-                <li key={item} className={item === "Settings" ? styles.activeRow : ""}>
-                  <span>{item}</span>
-                  <span className={styles.arrow}>&gt;</span>
-                </li>
-              ))}
-            </ul>
-
-            <button className={styles.logoutBtn}>LOG OUT</button>
-          </aside>
+          <AccountSidebar activeItem="Settings" />
 
           <section className={styles.rightPanel}>
             <h2>SETTINGS</h2>
@@ -92,4 +69,3 @@ export default function SettingsPage() {
     </div>
   );
 }
-

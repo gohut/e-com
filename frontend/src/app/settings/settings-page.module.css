@@ -20,21 +20,15 @@
 
 .layout {
   display: grid;
-  grid-template-columns: 440px 1fr;
-  gap: 36px;
+  grid-template-columns: 336px 1fr;
+  gap: 42px;
 }
 
-.leftPanel,
 .rightPanel {
   border: 1px solid #bcbcbc;
   background: #ececec;
 }
 
-.leftPanel {
-  padding: 22px 0 18px;
-}
-
-.leftPanel h2,
 .rightPanel h2 {
   font-size: 36px;
   font-weight: 700;
@@ -43,14 +37,12 @@
   margin-left: 26px;
 }
 
-.leftPanel ul,
 .rightPanel ul {
   list-style: none;
   margin: 6px 0 0;
   padding: 0;
 }
 
-.leftPanel li,
 .rightPanel li {
   min-height: 62px;
   display: flex;
@@ -61,7 +53,6 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.leftPanel li span:first-child,
 .rightPanel li span:first-child {
   font-size: 16px;
   color: #111;
@@ -80,34 +71,13 @@
   background: #e3e3e3;
 }
 
-.leftPanel li:hover,
 .rightPanel li:hover {
   background: #e2e2e2;
 }
 
-.leftPanel li:hover .arrow,
 .rightPanel li:hover .arrow {
   transform: translateX(3px);
   color: #000;
-}
-
-.logoutBtn {
-  width: calc(100% - 52px);
-  margin: 24px 26px 0;
-  height: 72px;
-  border: 1px solid #ef4d4d;
-  color: #ef4d4d;
-  background: transparent;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.logoutBtn:hover {
-  background: #ef4d4d;
-  color: #fff;
-  box-shadow: 0 6px 16px rgba(239, 77, 77, 0.25);
 }
 
 .rightPanel {
