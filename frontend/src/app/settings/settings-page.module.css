@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background: #ececec;
+  background: #ffffff;
 }
 
 .desktopOnly {
@@ -26,7 +26,7 @@
 
 .rightPanel {
   border: 1px solid #bcbcbc;
-  background: #ececec;
+  background: #ffffff;
 }
 
 .rightPanel h2 {
@@ -179,3 +179,4 @@
     font-weight: 300;
   }
 }
+

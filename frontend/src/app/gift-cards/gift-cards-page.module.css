@@ -1,6 +1,6 @@
-﻿.page {
+.page {
   min-height: 100vh;
-  background: #ececec;
+  background: #ffffff;
 }
 
 .desktopOnly {
@@ -406,3 +406,4 @@
     border-right: 1px solid #d1d1d1;
   }
 }
+

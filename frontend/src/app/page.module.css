@@ -132,7 +132,7 @@
 }
 
 .termsSection {
-  padding: 34px 24px 40px;
+  padding: 34px 68px 40px;
   border-top: 1px solid #f0f0f0;
 }
 
@@ -182,23 +182,33 @@
 }
 
 .aboutSection {
-  padding: 10px 24px 28px;
+  padding: 10px 68px 28px;
   border-top: 1px solid #f0f0f0;
-  background: #f3f3f3;
+  background: #f2f2f2;
 }
 
 .aboutContainer {
-  max-width: 1060px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .aboutPage {
   padding: 0;
-  background: #ececec;
+  background: #f2f2f2;
 }
 
 .aboutMain {
-  max-width: 1120px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 0;
+  background: #f2f2f2;
+}
+
+.aboutMain .aboutSection {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .privacyPage {
@@ -207,7 +217,17 @@
 }
 
 .privacyMain {
-  max-width: 1120px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 0;
+  background: #ececec;
+}
+
+.privacyMain .termsSection {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .privacyMobileHeader {
@@ -220,7 +240,17 @@
 }
 
 .policyMain {
-  max-width: 1120px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 0;
+  background: #ececec;
+}
+
+.policyMain .termsSection {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .policyMobileHeader {
@@ -242,7 +272,8 @@
 
 .aboutHeader {
   position: relative;
-  min-height: 28px;
+  min-height: 62px;
+  padding-top: 20px;
   margin-bottom: 14px;
 }
 
@@ -251,10 +282,10 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 42px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -263,11 +294,11 @@
 }
 
 .backButton svg {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 2.2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -275,20 +306,23 @@
 .aboutTitle {
   margin: 0;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.03em;
-  line-height: 28px;
+  letter-spacing: 0;
+  line-height: 42px;
 }
 
 .contentWrapper {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .aboutText {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 0 2px;
   font-size: 0.92rem;
   line-height: 1.45;
@@ -296,6 +330,10 @@
 }
 
 .footerInfo {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 22px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -344,7 +382,7 @@
 .userPreferenceSection {
   flex: 1;
   min-height: 0;
-  padding: 30px 24px;
+  padding: 30px 68px;
   border-top: 1px solid #f0f0f0;
   background: #f1f1f1;
   overflow: hidden;
@@ -452,11 +490,21 @@
 }
 
 .userPreferenceMain {
-  max-width: 1120px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 0;
+  background: #ececec;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+.userPreferenceMain .userPreferenceSection {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .userPreferenceMain .navbar {
@@ -507,7 +555,7 @@
   .aboutSection {
     border-top: 0;
     padding: 98px 26px 24px;
-    background: #ececec;
+    background: #f2f2f2;
   }
 
   .aboutMain {
@@ -516,7 +564,7 @@
     min-height: 100dvh;
     height: 100dvh;
     border: 0;
-    background: #ececec;
+    background: #f2f2f2;
     overflow-y: auto;
   }
 

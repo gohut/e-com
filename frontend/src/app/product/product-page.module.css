@@ -1,4 +1,4 @@
-.page { min-height: 100vh; background: #ececec; }
+.page { min-height: 100vh; background: #ffffff; }
 .topNav { height: 32px; max-width: 1440px; margin: 0 auto; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; display: flex; align-items: center; gap: 18px; overflow-x: auto; white-space: nowrap; padding: 0 68px; font-size: 16px; background: #efefef; }
 .main { max-width: 1440px; margin: 0 auto; padding: 16px 68px 40px; }
 .hero { display: grid; grid-template-columns: 1fr 420px; gap: 20px; }

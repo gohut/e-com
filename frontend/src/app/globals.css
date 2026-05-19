@@ -1,4 +1,8 @@
-﻿html {
+:root {
+  --font-poppins: "Segoe UI";
+}
+
+html {
   height: 100%;
 }
 

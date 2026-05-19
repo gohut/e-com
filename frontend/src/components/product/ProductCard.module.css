@@ -8,6 +8,7 @@
 }
 
 .imageWrap {
+  position: relative;
   aspect-ratio: 3 / 4;
   width: 100%;
   overflow: hidden;

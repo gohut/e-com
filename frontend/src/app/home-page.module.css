@@ -1,0 +1,276 @@
+.page {
+  min-height: 100vh;
+  background: #efefef;
+  color: #111;
+}
+
+.noticeBar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 6px 18px;
+  font-size: 11px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.topNav {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 7px 18px;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  gap: 18px;
+  font-size: 11px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.hero img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.heroText {
+  background: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid #dbdbdb;
+  padding: 24px;
+}
+
+.heroText h1 {
+  font-size: 36px;
+  letter-spacing: 0.08em;
+}
+
+.heroText p {
+  font-size: 18px;
+}
+
+.heroText button {
+  width: 120px;
+  height: 34px;
+  border: 1px solid #111;
+  background: transparent;
+  font-size: 14px;
+}
+
+.section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px 18px 18px;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 0.24em;
+  margin-bottom: 18px;
+  transform: scale(0.42);
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.featuredCard {
+  position: relative;
+  min-height: 210px;
+}
+
+.featuredCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featuredCard span {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  color: #fff;
+  font-size: 26px;
+  letter-spacing: 0.16em;
+  transform: scale(0.42);
+  transform-origin: left bottom;
+}
+
+.occasionGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.occasionCard {
+  position: relative;
+  min-height: 190px;
+}
+
+.occasionCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.occasionCard span {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  color: #fff;
+  font-size: 23px;
+  line-height: 1.12;
+  transform: scale(0.42);
+  transform-origin: left bottom;
+}
+
+.banner {
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+.banner div {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-align: left;
+}
+
+.banner p {
+  font-size: 30px;
+  transform: scale(0.42);
+  transform-origin: left center;
+}
+
+.banner h3 {
+  margin-top: 4px;
+  font-size: 56px;
+  transform: scale(0.42);
+  transform-origin: left top;
+}
+
+.sizeCards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.sizeCards img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.chips {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.chips button {
+  border: 1px solid #bdbdbd;
+  background: #fff;
+  height: 24px;
+  padding: 0 10px;
+  font-size: 10px;
+}
+
+.productGrid {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.productCard img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.productCard h4 {
+  margin-top: 8px;
+  font-size: 18px;
+  transform: scale(0.42);
+  transform-origin: left top;
+}
+
+.productCard p {
+  margin-top: -8px;
+  font-size: 18px;
+  transform: scale(0.42);
+  transform-origin: left top;
+}
+
+.productCard span {
+  color: #777;
+  text-decoration: line-through;
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .occasionGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .hero img {
+    height: 220px;
+  }
+
+  .section,
+  .hero {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sizeCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .occasionGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
