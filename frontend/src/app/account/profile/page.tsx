@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './account-overview.module.scss';
+import styles from '../account-overview.module.scss';
 
 export default function AccountOverviewPage() {
   return (

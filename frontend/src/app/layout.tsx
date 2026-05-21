@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { CartProvider } from "@/context/CartContext";
+import { CategoryProvider } from "@/context/CategoryContext";
 import "./globals.scss";
 
 export const metadata: Metadata = {
@@ -9,7 +11,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          <CategoryProvider>{children}</CategoryProvider>
+        </CartProvider>
+      </body>
     </html>
   );
 }

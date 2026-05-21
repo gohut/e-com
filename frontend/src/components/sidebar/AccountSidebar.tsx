@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { label: 'SETTINGS',              href: '/account/settings' },
   { label: 'PREFERENCES',           href: '/account/preferences' },
   { label: 'TERMS AND CONDITIONS',  href: '/account/terms' },
-  { label: 'Cards and UPI',         href: '/account/cards' },
+  { label: 'Cards & UPI',           href: '/account/cards' },
 ];
 
 interface Props { onClose?: () => void; }

@@ -102,19 +102,7 @@
     &::placeholder { color: $color-gray-light; }
   }
 
-  @include mobile {
-    display: none;
-    &.searchVisible {
-      display: flex;
-      position: absolute;
-      top: $navbar-height;
-      left: 0; right: 0;
-      max-width: 100%;
-      border-radius: 0;
-      border-left: none; border-right: none;
-      z-index: $z-dropdown;
-    }
-  }
+  // @include mobile block removed since search bar should stay visible
 }
 
 .searchIcon {

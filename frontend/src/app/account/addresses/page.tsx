@@ -48,7 +48,7 @@ export default function AddressesPage() {
   const defaultAddr = addresses.filter((a) => a.isDefault);
   const otherAddrs  = addresses.filter((a) => !a.isDefault);
 
-  const Field = ({ name, placeholder, maxLength }: { name: keyof typeof form; placeholder: string; maxLength?: number }) => (
+  const renderField = (name: keyof typeof form, placeholder: string, maxLength?: number) => (
     <div className={styles.fieldGroup}>
       <input
         type="text" placeholder={placeholder} value={form[name]} maxLength={maxLength}
@@ -97,13 +97,13 @@ export default function AddressesPage() {
               <button onClick={() => setShowForm(false)} className={styles.closeBtn}>✕</button>
             </div>
             <div className={styles.formBody}>
-              <Field name="name"     placeholder="Full Name" />
-              <Field name="mobile"   placeholder="Mobile Number (10 digits)" maxLength={10} />
-              <Field name="pincode"  placeholder="Pincode (6 digits)" maxLength={6} />
-              <Field name="area"     placeholder="Flat, House No., Building, Street" />
-              <Field name="plusCode" placeholder="Area / Plus Code (Optional)" />
-              <Field name="city"     placeholder="Town / City" />
-              <Field name="state"    placeholder="State" />
+              {renderField("name",     "Full Name")}
+              {renderField("mobile",   "Mobile Number (10 digits)", 10)}
+              {renderField("pincode",  "Pincode (6 digits)", 6)}
+              {renderField("area",     "Flat, House No., Building, Street")}
+              {renderField("plusCode", "Area / Plus Code (Optional)")}
+              {renderField("city",     "Town / City")}
+              {renderField("state",    "State")}
 
               <div className={styles.labelRow}>
                 {LABELS.map((l) => (
